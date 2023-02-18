@@ -38,6 +38,9 @@ final
 ```
     c. Write down a list with at least 3 tips of how to make working with git/github easier  
 
+
+
+
 2. Generate the graph of LifExp vs. gdpPercap for US, Canada (fixed data) and Australia by RMarkdown based on the data set "gapminder-5060", like what we did in the class.  
 Please use Github to collaborate on this problem. For example, one member can create the plot of US in his/her repository. The other member will fork this repository, add the result for the second country, and make a pull request for merging into the main repository. Each member should at least analyze one country and make at least one pull request. **Please submit the RMarkdown file, the output file, and the screen shot of the successful pull request and the merge.**
 ```{r}
@@ -58,10 +61,52 @@ US %>%
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+life5060 <- read.csv("https://raw.githubusercontent.com/yumouqiu/DS202-Spring2023/main/Lecture1_collaborative-environment/data/gapminder-5060.csv")
+head(life5060)
+dim(life5060)
+```
+
+
+```{r}
+IN <- life5060[life5060$country == "India", ]
+IN
+```
+
+```{r}
+IN #%>% 
+ggplot(life5060, aes(x = gdpPercap, y = lifeExp)) + geom_line()
+```
+
+
+
+
+
+
+
+
 3. Write a paragraph (~200 words) describing an example of what you consider data science. Write your paragraph in R Markdown. Include at least 
     a. one link to a chart or an image and 
     b. at least one itemized or enumerated list.
-    
+
+
+
+
+
+
+
 
 Note: your submission is supposed to be fully reproducible, i.e. the TA and I will 'knit' your submission in RStudio. Including the link to the image is the tricky part here. Make sure that you don't use any file structure that depends on your computing environment.
 
