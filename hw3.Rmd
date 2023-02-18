@@ -2,9 +2,9 @@
 title: 'Homework 3'
 author: "Leah Greiner"
 date: "2/10/2023"
-output: html_document
+output: html_document 
 ---
-
+ 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -24,11 +24,11 @@ library(tidyverse)
 
 ```{r}
 # create matrix with 4 columns and 4 rows
-data= matrix(c("word","word","word","https://github.com/leahgreiner/homework03","word","word"), ncol=3, byrow=TRUE)
+data= matrix(c("https://github.com/tesskern/hw3","1","hw3","https://github.com/leahgreiner/hw3","2","hw3","https://github.com/dmaheeka/hw3","1","hw3"), ncol=3, byrow=TRUE)
  
 # specify the column names and row names of matrix
 colnames(data) = c('Link','Pull Request','Name of Repository')
-rownames(data) <- c('Tess','Leah')
+rownames(data) <- c('Tess','Leah','Maheeka')
  
 # assign to table
 final=as.table(data)
@@ -37,28 +37,67 @@ final=as.table(data)
 final
 ```
     c. Write down a list with at least 3 tips of how to make working with git/github easier  
+    1. Don't push at the same time
+    2. 1 person create the first document, not everyone create their own.
+    3. Commit before you push
 
 
 
 
 2. Generate the graph of LifExp vs. gdpPercap for US, Canada (fixed data) and Australia by RMarkdown based on the data set "gapminder-5060", like what we did in the class.  
 Please use Github to collaborate on this problem. For example, one member can create the plot of US in his/her repository. The other member will fork this repository, add the result for the second country, and make a pull request for merging into the main repository. Each member should at least analyze one country and make at least one pull request. **Please submit the RMarkdown file, the output file, and the screen shot of the successful pull request and the merge.**
-```{r}
-life5060 <- read.csv("https://raw.githubusercontent.com/yumouqiu/DS202-Spring2023/main/Lecture1_collaborative-environment/data/gapminder-5060.csv")
-head(life5060)
-dim(life5060)
-```
 
-```{r}
-US <- life5060[life5060$country == "United States", ]
-US
-```
 
-```{r}
-US %>% 
-  ggplot(aes(x = gdpPercap, y = lifeExp)) +
-  geom_line()
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,9 +125,58 @@ IN
 ```
 
 ```{r}
-IN #%>% 
-ggplot(life5060, aes(x = gdpPercap, y = lifeExp)) + geom_line()
+IN %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_line()
 ```
+
+```{r}
+AUS <- life5060[life5060$country == "Australia", ]
+AUS
+```
+```{r}
+AUS %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_line() 
+```
+
+
+```{r}
+USA <- life5060[life5060$country == "United States", ]
+USA
+```
+
+
+```{r}
+USA %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_line()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -101,12 +189,27 @@ ggplot(life5060, aes(x = gdpPercap, y = lifeExp)) + geom_line()
     a. one link to a chart or an image and 
     b. at least one itemized or enumerated list.
 
+<<<<<<< HEAD
+=======
+    Data science is using large volumes of data to tell a story through analysis. Since large files are usually utilized, there are ways to save time and analyze data in a quick and easy
+    way. Using applications like RStudio or python are helpful in analyzing large amounts of data quickly. 
+    An example that comes to our minds is analyzing field data from a cropping systems study. Researchers can collect thousands of data points through growing points in a summer/fall. Researchers can look at quantitative data like plant height, root mass, leaf number, insect feeding damage, plant disease damage. Scientists can take all this information and make plant breeding decisions based on how the data looks after analysis. 
+    
+    https://www.google.com/url?sa=i&url=https%3A%2F%2Fthedatascientist.com%2Fdata-science-considered-own-discipline%2F&psig=AOvVaw38A5MS7f_yw25gHDwyhrvt&ust=1676772812491000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIDH7tL_nf0CFQAAAAAdAAAAABAD
+    
+   
+=======
 
 
 
 
 
 
+
+
+
+
+>>>>>>> 3adf42a (try 1)
 
 Note: your submission is supposed to be fully reproducible, i.e. the TA and I will 'knit' your submission in RStudio. Including the link to the image is the tricky part here. Make sure that you don't use any file structure that depends on your computing environment.
 
